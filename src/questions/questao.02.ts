@@ -40,12 +40,7 @@ class Gerente extends Funcionario {
 class Desenvolvedor extends Funcionario {
     // Desenvolvedor tem um atributo a mais: projetosEntregues
     // Esse atributo conta quantos projetos ele já entregou
-    constructor(
-        nome: string,
-        salario: number,
-        identificacao: string,
-        public projetosEntregues: number,
-    ) {
+    constructor(nome: string, salario: number, identificacao: string, public projetosEntregues: number) {
         super(nome, salario, identificacao);
     }
 
@@ -79,9 +74,7 @@ class Estagiario extends Funcionario {
     }
 }
 
-// ============================================
 // INSTANCIAÇÃO DOS FUNCIONÁRIOS (PONTO 5)
-// ============================================
 
 // Aqui eu crio uma lista que pode guardar qualquer tipo de Funcionario
 // Isso é importante porque mostra o polimorfismo:
@@ -107,9 +100,7 @@ const funcionarios: Funcionario[] = [
     new Estagiario('Amanda Ribeiro', 1500, 'EST-004'),
 ];
 
-// ============================================
 // SIMULAÇÃO E DEMONSTRAÇÃO DO POLIMORFISMO (PONTO 6)
-// ============================================
 
 console.log('========================================');
 console.log('SISTEMA DE FUNCIONÁRIOS - DEMONSTRAÇÃO');

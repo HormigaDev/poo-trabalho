@@ -18,11 +18,11 @@ class Livro {
         if (this.disponivel) {
             // Se está disponível, marco como não disponível (false)
             this.disponivel = false;
-            console.log(`✓ Livro "${this.titulo}" emprestado com sucesso!`);
+            console.log(`Livro "${this.titulo}" emprestado com sucesso!`);
             return true; // Retorno true pra dizer que deu certo
         } else {
             // Se não está disponível, mostro mensagem de erro
-            console.log(`✗ Livro "${this.titulo}" não está disponível para empréstimo.`);
+            console.log(`Livro "${this.titulo}" não está disponível para empréstimo.`);
             return false; // Retorno false pra dizer que não deu certo
         }
     }
@@ -31,7 +31,7 @@ class Livro {
     devolver(): void {
         // Quando devolve, o livro fica disponível novamente
         this.disponivel = true;
-        console.log(`✓ Livro "${this.titulo}" devolvido com sucesso!`);
+        console.log(`Livro "${this.titulo}" devolvido com sucesso!`);
     }
 }
 
@@ -53,7 +53,7 @@ class Membro {
 
         if (jaTemEsseLivro) {
             // Se já tem, não pode pegar de novo
-            console.log(`✗ ${this.nome} já tem o livro "${livro.titulo}" emprestado!`);
+            console.log(`${this.nome} já tem o livro "${livro.titulo}" emprestado!`);
             return;
         }
 
@@ -63,9 +63,7 @@ class Membro {
         // Se conseguiu emprestar, adiciono na lista de livros do membro
         if (conseguiu) {
             this.livrosEmprestados.push(livro);
-            console.log(
-                `  ${this.nome} agora tem ${this.livrosEmprestados.length} livro(s) emprestado(s).`,
-            );
+            console.log(`  ${this.nome} agora tem ${this.livrosEmprestados.length} livro(s) emprestado(s).`);
         }
     }
 
@@ -78,7 +76,7 @@ class Membro {
 
         // Se não encontrei (indice = -1), é porque o membro não tem esse livro
         if (indice === -1) {
-            console.log(`✗ ${this.nome} não tem o livro "${livro.titulo}" para devolver!`);
+            console.log(`${this.nome} não tem o livro "${livro.titulo}" para devolver!`);
             return;
         }
 
@@ -86,22 +84,14 @@ class Membro {
         this.livrosEmprestados.splice(indice, 1);
         // E chamo o método devolver do livro para marcá-lo como disponível
         livro.devolver();
-        console.log(
-            `  ${this.nome} agora tem ${this.livrosEmprestados.length} livro(s) emprestado(s).`,
-        );
+        console.log(`  ${this.nome} agora tem ${this.livrosEmprestados.length} livro(s) emprestado(s).`);
     }
 }
 
 const livros: Livro[] = [
     new Livro(1, 'Harry Potter e a Pedra Filosofal', 'J. K. Rowling', 'Bloomsbury', 1997),
     new Livro(2, 'O senhor dos aneis', 'J. R. R. Tolkien', 'Allen & Unwin', 1954),
-    new Livro(
-        3,
-        'Crônica da morte anuciada',
-        'Gabriel Garcia Marquez',
-        'Editorial Ovelha Preta',
-        1981,
-    ),
+    new Livro(3, 'Crônica da morte anuciada', 'Gabriel Garcia Marquez', 'Editorial Ovelha Preta', 1981),
     new Livro(4, '1984', 'George Orwell', 'Secker & Warburg', 1949),
 ];
 
