@@ -1,15 +1,19 @@
 {
-  "name": "trabalho-poo",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "typescript": "^5.9.3"
-  }
+    "name": "trabalho-poo",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "q1": "ts-node src/questions/questao.01.ts",
+        "q2": "ts-node src/questions/questao.02.ts",
+        "q3": "ts-node src/questions/questao.03.ts",
+        "q4": "ts-node src/questions/questao.04.ts"
+    },
+    "keywords": [],
+    "author": "Isai Medina",
+    "license": "MIT",
+    "description": "Projeto universitarios POO",
+    "devDependencies": {
+        "ts-node": "^10.9.2",
+        "typescript": "^5.9.3"
+    }
 }
